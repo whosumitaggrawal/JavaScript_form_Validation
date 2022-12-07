@@ -7,6 +7,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fresh Grocery</title>
 </head>
+<style>
+  a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: mediumblue;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  a:active {
+    color: mediumblue;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  </style>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+  }
+  
+  #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+  }
+  
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
+  </style>
+  
 <body>
     <h1 class="heading"><b>This is grocery shopping project</b></h1>
     <p>If you want to enjoy music while shopping. Use this audio</p>
@@ -14,7 +81,10 @@
       <source src="music.mp3" type="audio/mpeg">
       Your Browser does not support the audio element.
     </audio>
-    <br>
+    <br><br>
+    <div class="emp">
+    <a href="index2.html">Click here to get the details of our employees</a>
+  </div>
     <h2>We want your location for better experience of the site.</h2>
     <button onclick="getLocation()">Get Location</button>
     <div id="output"></div>
@@ -115,10 +185,11 @@
 </audio>
 <br>
 <p>This is the ad by our sponsers.</p>
-<video width="800" height="450" controls>
+<video width="800" height="450" preload authoplay controls>
   <source src="video.mp4" type="video/mp4">
   Your Browser does not support the Video element/tag.
 </video>
+
 
 <h2>These are the products we serve</h2>
 
@@ -204,16 +275,12 @@ function validateForm()
     alert("First Name cannot be empty");
     return false;
   }
-
-  
   
   else if(!email.match(mailformat))
   {
   alert("You have entered an invalid email address!");
   return false;
-  }
-
-  
+  }  
   
   else if(!phone.match(phoneno))
   {
@@ -243,30 +310,24 @@ function validateForm()
     alert("Passwords Do Not Match!");
     return false;
   }
-
   
   else if(city.selectedIndex == 0 || city.options[city.selectedIndex].value == -1) {
   alert('Please Select Your City');
   return false;
   }
-
   else if(!myForm.terms.checked) {
       alert("Please indicate that you accept the Terms and Conditions");
       myForm.terms.focus();
       return false;
   }
-
     else
     {
       alert("Form Submitted succesfully");
       location.reload();
     }
-}
-      
+}   
 </script>
 <p><strong>Thanks for Shopping..!</strong></p>
-
 </body>
 </body>
 </html>
-
